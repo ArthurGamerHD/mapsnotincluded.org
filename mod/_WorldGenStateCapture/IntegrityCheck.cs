@@ -97,10 +97,14 @@ namespace _WorldGenStateCapture
 		}
 		public static string GetUserId()
 		{
+			if(!string.IsNullOrEmpty(Config.Instance.UserIdOverride))
+				return Config.Instance.UserIdOverride;
+			
 			if (DistributionPlatform.Initialized) //this should usually always be initialized
 			{
 				return DistributionPlatform.Inst.Name + "-" + DistributionPlatform.Inst.LocalUser.Id;
 			}
+
 			return "LocalUser-" + Environment.UserName;
 		}
 		public static string GetInstallationId()
@@ -170,6 +174,7 @@ namespace _WorldGenStateCapture
 			{
 				ModAssets.VersionOutdated = true;
 				Debug.LogWarning("MNI: Mod version mismatch detected. Please update your mod.");
+				Debug.LogWarning($"Server: '{serverVersion}' - Client: '{Credentials.RELEASE_VERSION_ID}'");
 			}
 			else
 			{

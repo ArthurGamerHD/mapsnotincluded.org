@@ -81,6 +81,10 @@ namespace _WorldGenStateCapture
 		[JsonProperty]
 		public bool WorldStatisticsExport { get; set; } = false;
 
+		[Option("STRINGS.WORLDPARSERMODCONFIG.USERIDOVERRIDE.NAME", "STRINGS.WORLDPARSERMODCONFIG.USERIDOVERRIDE.DESC")]
+		[JsonProperty]
+		public string UserIdOverride { get; set; } = string.Empty;
+
 		public enum ClusterSelection_Base
 		{
 			[Option("STRINGS.WORLDPARSERMODCONFIG.RANDOMIZEDGEN.NAME", "STRINGS.WORLDPARSERMODCONFIG.RANDOMIZEDGEN.DESC")]

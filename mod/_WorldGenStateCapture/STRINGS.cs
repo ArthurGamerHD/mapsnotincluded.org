@@ -95,6 +95,11 @@
 				public static LocString NAME = "Get Authentication Token";
 				public static LocString DESC = "Opens the webbrowser for you to grab your authentication token.";
 			}
+			public class USERIDOVERRIDE
+			{
+				public static LocString NAME = "Overrides user ID";
+				public static LocString DESC = "Overrides user ID when uploading (ex: Steam service is down or is running on Family Share).";
+			}
 		}
 		public class AUTOPARSING
 		{
